@@ -16,7 +16,6 @@ class PlanetTest {
 	@DisplayName("Sort by planet size, largest first")
 	@Disabled()
 	void planetSize() {
-
 		List<Planet> planetsBySize = List.of(Planet.values()).stream()
 				// TODO Implement me
 				.collect(Collectors.toList());
@@ -31,5 +30,16 @@ class PlanetTest {
 												  Planet.VENUS,
 												  Planet.MARS,
 												  Planet.MERCURY);
+	}
+
+	@Test
+	@DisplayName("Find the planet with the coldest surface")
+	@Disabled
+	void coldestPlanet() {
+		Planet coldestPlanet = List.of(Planet.values()).stream()
+				// TODO Implement me
+				.findFirst().get();
+
+		assertThat(coldestPlanet).isEqualTo(Planet.NEPTUNE);
 	}
 }
